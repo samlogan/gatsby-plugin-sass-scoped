@@ -45,7 +45,7 @@ for all available options.
 ```javascript:title=gatsby-config.js
 plugins: [
   {
-    resolve: `gatsby-plugin-sass`,
+    resolve: `gatsby-plugin-sass-scoped`,
     options: {
       includePaths: ["absolute/path/a", "absolute/path/b"],
       ...
@@ -59,7 +59,7 @@ If you need to override the default options passed into [`css-loader`](https://g
 ```javascript:title=gatsby-config.js
 plugins: [
   {
-    resolve: `gatsby-plugin-sass`,
+    resolve: `gatsby-plugin-sass-scoped`,
     options: {
       cssLoaderOptions: {
         camelCase: false,
@@ -80,7 +80,7 @@ npm install --save-dev sass
 ```javascript:title=gatsby-config.js
 plugins: [
   {
-    resolve: `gatsby-plugin-sass`,
+    resolve: `gatsby-plugin-sass-scoped`,
     options: {
       implementation: require("sass"),
     },
@@ -99,7 +99,7 @@ See [Bootstrap's documentation on theming](https://github.com/twbs/bootstrap/blo
 ```javascript:title=gatsby-config.js
 plugins: [
   {
-    resolve: `gatsby-plugin-sass`,
+    resolve: `gatsby-plugin-sass-scoped`,
     options: {
       postCssPlugins: [somePostCssPlugin()],
       precision: 6,
@@ -115,7 +115,7 @@ See [`bootstrap-sass`](https://github.com/twbs/bootstrap-sass/blob/master/README
 ```javascript:title=gatsby-config.js
 plugins: [
   {
-    resolve: `gatsby-plugin-sass`,
+    resolve: `gatsby-plugin-sass-scoped`,
     options: {
       postCssPlugins: [somePostCssPlugin()],
       precision: 8,
@@ -136,7 +136,7 @@ To override the file regex for SASS or CSS modules,
 ```javascript:title=gatsby-config.js
 plugins: [
   {
-    resolve: `gatsby-plugin-sass`,
+    resolve: `gatsby-plugin-sass-scoped`,
     options: {
       // Override the file regex for SASS
       sassRuleTest: /\.global\.s(a|c)ss$/,
@@ -171,7 +171,7 @@ And then:
 ```javascript:title=gatsby-config.js
 plugins: [
   {
-    resolve: "gatsby-plugin-sass",
+    resolve: "gatsby-plugin-sass-scoped",
     options: {
       useResolveUrlLoader: true,
     },
@@ -184,7 +184,7 @@ You can also configure resolve-url-plugin providing some options (see [plugin do
 ```javascript:title=gatsby-config.js
 plugins: [
   {
-    resolve: "gatsby-plugin-sass",
+    resolve: "gatsby-plugin-sass-scoped",
     options: {
       useResolveUrlLoader: {
         options: {
@@ -201,7 +201,7 @@ NOTE that adding resolve-url-loader will use `sourceMap: true` on sass-loader (a
 ```javascript:title=gatsby-config.js
 plugins: [
   {
-    resolve: "gatsby-plugin-sass",
+    resolve: "gatsby-plugin-sass-scoped",
     options: {
       useResolveUrlLoader: {
         options: {
@@ -213,13 +213,6 @@ plugins: [
 ]
 ```
 
-## Breaking changes history
-
-<!-- Please keep the breaking changes list ordered with the newest change at the top -->
-
-### v2.0.0
-
-- `node-sass` is moved to a peer dependency. Installing the package
-  alongside `gatsby-plugin-sass` is now required. Use `npm install --save node-sass`
+## Please note
 
 - support Gatsby v2 only
