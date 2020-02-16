@@ -53,9 +53,14 @@ exports.onCreateWebpackConfig = (
       options: useResolveUrlLoader.options ? useResolveUrlLoader.options : {},
     })
   }
-  sassRule.use.splice(-1, 0, {
-    loader: resolve(`scoped-css-loader`),
-  });
+  if (!isSSR) {
+    sassRule.use.splice(-1, 0, {
+      loader: resolve(`scoped-css-loader`),
+    });
+    sassRuleModules.use.splice(-1, 0, {
+      loader: resolve(`scoped-css-loader`),
+    });
+  }
 
 
   let configRules = []
