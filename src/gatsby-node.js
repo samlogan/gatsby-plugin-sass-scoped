@@ -23,6 +23,10 @@ exports.onCreateWebpackConfig = (
     },
   }
 
+  const scopedLoader = {
+    loader: resolve(`scoped-css-loader`),
+  }
+
   const sassRule = {
     test: sassRuleTest || /\.s(a|c)ss$/,
     use: isSSR
@@ -31,6 +35,7 @@ exports.onCreateWebpackConfig = (
           loaders.miniCssExtract(),
           loaders.css({ ...cssLoaderOptions, importLoaders: 2 }),
           loaders.postcss({ plugins: postCssPlugins }),
+          scopedLoader,
           sassLoader,
         ],
   }
@@ -43,6 +48,7 @@ exports.onCreateWebpackConfig = (
       sassLoader,
     ].filter(Boolean),
   }
+
   if (useResolveUrlLoader && !isSSR) {
     sassRule.use.splice(-1, 0, {
       loader: `resolve-url-loader`,
@@ -53,15 +59,6 @@ exports.onCreateWebpackConfig = (
       options: useResolveUrlLoader.options ? useResolveUrlLoader.options : {},
     })
   }
-  if (!isSSR) {
-    sassRule.use.splice(-1, 0, {
-      loader: resolve(`scoped-css-loader`),
-    });
-    sassRuleModules.use.splice(-1, 0, {
-      loader: resolve(`scoped-css-loader`),
-    });
-  }
-
 
   let configRules = []
 
