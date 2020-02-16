@@ -54,7 +54,7 @@ exports.onCreateWebpackConfig = (
     })
   }
   sassRule.use.splice(-1, 0, {
-    loader: `scoped-css-loader`,
+    loader: resolve(`scoped-css-loader`),
   });
 
 
