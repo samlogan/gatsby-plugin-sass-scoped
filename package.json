@@ -1,7 +1,7 @@
 {
   "name": "gatsby-plugin-sass-scoped",
   "description": "Gatsby plugin to handle scoped scss/sass files",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Sam Logan <sam@woollymammoth.co",
   "bugs": {
     "url": "https://github.com/samlogan/gatsby-plugin-sass-scoped/issues"
