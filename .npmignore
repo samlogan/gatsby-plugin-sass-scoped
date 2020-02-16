@@ -27,6 +27,7 @@ build/Release
 node_modules
 *.un~
 yarn.lock
+yarn-error.log
 src
 flow-typed
 coverage

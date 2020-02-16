@@ -4,7 +4,11 @@ Provides drop-in support for scoped and unscoped SASS/SCSS stylesheets
 
 ## Install
 
-`npm install --save node-sass gatsby-plugin-sass`
+`npm install --save node-sass gatsby-plugin-sass-scoped`
+
+or
+
+`yarn add node-sass gatsby-plugin-sass-scoped`
 
 ## How to use
 
@@ -14,30 +18,23 @@ Provides drop-in support for scoped and unscoped SASS/SCSS stylesheets
 plugins: [`gatsby-plugin-sass-scoped`]
 ```
 
-2. Write your stylesheets in Sass/SCSS and attached .scoped to the file name to identify it scoped/unscoped and require or import them as normal.
+2. Write your stylesheets in Sass/SCSS and attached `.scoped` to the file name to identify it scoped/unscoped and require or import them as normal.
 
-```scss:title=src/index.scss
-// Unscoped
+```scss:
 .wrapper {
   max-width: 1200px;
 }
 ```
 
-```scss:title=src/component/index.scoped.scss
-// Scoped
-.wrapper {
-  max-width: 900;
-}
-```
 
-```javascript:title=gatsby-browser.js
+```javascript:
 // Unscoped
-import("./src/index.scss")
+import("./component/index.scss")
 ```
 
-```javascript:title=gatsby-browser.js
+```javascript:
 // Scoped
-import("./src/component/index.scoped.scss")
+import("./component/index.scoped.scss")
 ```
 
 ## Other options

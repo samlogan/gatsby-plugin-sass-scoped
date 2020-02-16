@@ -1,10 +1,10 @@
 {
   "name": "gatsby-plugin-sass-scoped",
   "description": "Gatsby plugin to handle scoped scss/sass files",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "author": "Sam Logan <sam@woollymammoth.co",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/samlogan/gatsby-plugin-sass-scoped/issues"
   },
   "dependencies": {
     "@babel/runtime": "^7.7.6",
@@ -18,7 +18,7 @@
     "babel-preset-gatsby-package": "^0.2.16",
     "cross-env": "^5.2.1"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-sass#readme",
+  "homepage": "https://github.com/samlogan/gatsby-plugin-sass-scoped",
   "keywords": [
     "gatsby",
     "gatsby-plugin",
@@ -34,8 +34,7 @@
   "readme": "README.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby.git",
-    "directory": "packages/gatsby-plugin-sass"
+    "url": "https://github.com/samlogan/gatsby-plugin-sass-scoped.git"
   },
   "scripts": {
     "build": "babel src --out-dir . --ignore **/__tests__",
